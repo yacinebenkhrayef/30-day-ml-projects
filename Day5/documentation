@@ -1,0 +1,68 @@
+ Random Forest for SMS Spam Detection
+Using the SMS Spam Collection Dataset from UCI, you’ll build a model to classify incoming text messages as spam or ham (not spam).
+This project introduces natural language preprocessing, converting text to numerical form using TF-IDF, and building a Random Forest classifier, an ensemble method that combines multiple decision trees for better performance and robustness.
+
+You’ll evaluate the model using precision and recall, which are essential for imbalanced classification tasks like spam detection.
+  Project Guide: Build It Yourself
+1. Load and Explore the Dataset
+Download the dataset from UCI Machine Learning Repository.
+
+The dataset is usually in a .tsv format with two columns:
+
+label → "ham" or "spam"
+
+message → the actual SMS text
+
+Check class balance to understand how many spam vs ham messages are present.
+
+2. Text Preprocessing
+Clean the text messages:
+
+Lowercase everything
+
+Remove punctuation, special characters
+
+Remove stopwords (like “and”, “is”, etc.)
+
+Optionally: apply stemming or lemmatization
+
+This reduces noise and improves model performance.
+
+3. Convert Text to TF-IDF Features
+Use a TF-IDF Vectorizer to convert text into numerical features.
+
+TF-IDF (Term Frequency-Inverse Document Frequency) emphasizes important words and downplays common ones.
+
+The output is a high-dimensional sparse matrix representing each message.
+
+4. Train the Random Forest Classifier
+Split the data into training and testing sets.
+
+Use RandomForestClassifier from sklearn.ensemble.
+
+Fit the model on the training data.
+
+Random Forests are robust and handle noisy features well, which is great for text.
+
+5. Evaluate the Model
+Make predictions on the test set.
+
+Instead of just accuracy (which can be misleading with imbalanced classes), use:
+
+Precision: How many predicted spams were actually spam?
+
+Recall: How many actual spam messages did the model catch?
+
+You can also compute the F1-score for balance between the two.
+
+Bonus: use a confusion matrix to visually see TP, TN, FP, FN.
+
+  What You’ll Learn
+Basics of text preprocessing and feature engineering for NLP
+
+How to transform text with TF-IDF
+
+How Random Forests combine weak learners to make strong predictions
+
+Why precision and recall matter more than accuracy in skewed datasets
+
